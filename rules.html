@@ -1,40 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Deadly Clan – Rules</title>
-  <style>
-    body { margin: 0; background: #000; color: #fff; font-family: Arial, sans-serif; }
-    header { text-align: center; padding: 30px 20px; border-bottom: 2px solid gold; }
-    header h1 { color: gold; margin: 0; }
-    nav a { color: #fff; text-decoration: none; margin: 0 10px; font-weight: 600; }
-    nav a:hover { color: gold; }
-    .section { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
-    .section h2 { text-align: center; color: gold; }
-    ul { line-height: 1.6; }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>Deadly Clan – Rules</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="members.html">Members</a>
-      <a href="rules.html">Rules</a>
-      <a href="merch.html">Merch</a>
-    </nav>
-  </header>
+    <meta charset="UTF-8">
+    <title>Deadly Clan Rules</title>
+    <style>
+        body {
+            background: #000;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
 
-  <section class="section">
-    <h2>Code of the Lion</h2>
-    <ul>
-      <li>Respect the clan and its members.</li>
-      <li>No cheating, exploiting, or dishonorable play.</li>
-      <li>Show up when you commit to events.</li>
-      <li>Protect the clan’s name in every lobby.</li>
-      <li>New recruits must prove skill and loyalty.</li>
-    </ul>
-  </section>
-</body>
-</html>
+        /* NEON RED GLOW */
+        .neon {
+            color: #ff1a1a;
+            text-shadow: 0 0 10px #ff1a1a, 0 0 20px #ff1a1a, 0 0 40px #b30000;
+        }
+
+        /* NAVBAR */
+        nav {
+            background: #0a0a0a;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            border-bottom: 2px solid #b30000;
+            box-shadow: 0 0 20px #b30000;
+        }
+
+        nav a {
+            color: #ff1a1a;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #fff;
+            text-shadow: 0 0 15px #ff1a1a;
+        }
+
+        /* CLAN BANNER */
+        #banner {
+            width: 100%;
+            height: 250px;
+            background: url("Copilot_20260815_201341.png") center/cover no-repeat;
+            border-bottom: 3px solid #b30000;
+            box-shadow: 0 0 25px #b30000;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        header h1 {
+            font-size: 42px;
+            letter-spacing: 3px;
+        }
+
+        /* RULES GRID */
+        .rules-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            padding: 40px;
+        }
+
+        .rule-card {
+            background: #111;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid #333;
+            box-shadow: 0 0 15px #b30000;
+            transition: 0.3s;
+        }
+
+        .rule-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px #ff1a1a;
+        }
+
+        .rule-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .rule-card p {
+            opacity: 0.8;
+            font-size: 18px;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #0a0a0a;
+            border-top: 2px solid #b30000;
+            box-shadow: 0 0 20px #b30000;
+            margin-top: 40px;
+        }
+
+        footer p {
+            opacity: 0.7;
+        }
+
+        /* MOBILE */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 32px;
+            }
+
+            #banner {
+                height: 180px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="members.html">Members</a>
+    <a href="merch.html">Merch</a>
+    <a href="rules.html">Rules</a>
+</nav>
+
+<div id="banner"></div>
+
+<header>
+    <h1 class="neon">DEADLY CLAN RULES</h1>
+    <p>Honor. Discipline. Loyalty.</p>
+</header>
+
+<div class="rules-container">
+
+    <div class="rule-card">
+        <h3 class="neon">1. Respect the Clan</h3>
+        <p>Every member must treat others with respect. No harassment, bullying, or toxic behavior.</p>
+    </div>
+
+    <div class="rule-card">
+        <h3 class="neon">2. Follow Leadership</h3>
+        <p>Clan Leader and Co‑Leaders make final decisions. Their word is law within
