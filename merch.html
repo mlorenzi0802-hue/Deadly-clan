@@ -56,11 +56,6 @@
             letter-spacing: 1px;
         }
 
-        .item p {
-            font-size: 16px;
-            opacity: 0.8;
-        }
-
         .price {
             font-size: 20px;
             margin: 10px 0;
@@ -77,51 +72,247 @@
             display: inline-block;
             margin-top: 10px;
             transition: 0.3s;
+            cursor: pointer;
         }
 
         .btn:hover {
             background: #e60000;
         }
+
+        /* CART PANEL */
+        #cart {
+            position: fixed;
+            right: -400px;
+            top: 0;
+            width: 350px;
+            height: 100%;
+            background: #111;
+            border-left: 2px solid #b30000;
+            padding: 20px;
+            transition: 0.4s;
+            overflow-y: auto;
+        }
+
+        #cart.open {
+            right: 0;
+        }
+
+        #cart h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .cart-item {
+            background: #1a1a1a;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border: 1px solid #333;
+        }
+
+        .cart-item-title {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .cart-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .qty-btn {
+            background: #b30000;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            color: white;
+            border-radius: 5px;
+        }
+
+        .remove-btn {
+            background: #444;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #cart-total {
+            font-size: 22px;
+            text-align: center;
+            margin-top: 20px;
+            color: #b30000;
+        }
+
+        #checkoutBtn {
+            background: #b30000;
+            padding: 12px;
+            width: 100%;
+            text-align: center;
+            border-radius: 5px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        /* CART ICON ANIMATION */
+        #openCartBtn {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            background: #b30000;
+            padding: 15px 25px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        #openCartBtn.bump {
+            transform: scale(1.2);
+        }
+
+        /* CHECKOUT PAGE */
+        #checkoutPage {
+            display: none;
+            padding: 40px;
+            text-align: center;
+        }
+
+        #checkoutPage h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        #checkoutPage p {
+            font-size: 20px;
+            opacity: 0.8;
+        }
     </style>
 </head>
 
 <body>
-    <header>DEADLY CLAN MERCH</header>
 
-    <div class="store-container">
+<header>DEADLY CLAN MERCH</header>
 
-        <div class="item">
-            <img src="Copilot_20260815_201341.png" alt="Clan Hoodie">
-            <h3>Royal Hoodie</h3>
-            <p>Premium black hoodie with the Deadly Clan emblem.</p>
-            <div class="price">$45</div>
-            <a class="btn" href="#">Buy Now</a>
-        </div>
+<div id="openCartBtn">🛒 Cart</div>
 
-        <div class="item">
-            <img src="Copilot_20260815_201608.png" alt="Clan Shirt">
-            <h3>Ruthless T‑Shirt</h3>
-            <p>Lightweight shirt featuring the clan motto.</p>
-            <div class="price">$25</div>
-            <a class="btn" href="#">Buy Now</a>
-        </div>
+<div id="cart">
+    <h2>Your Cart</h2>
+    <div id="cart-items"></div>
+    <div id="cart-total">Total: $0</div>
+    <div id="checkoutBtn">Proceed to Checkout</div>
+</div>
 
-        <div class="item">
-            <img src="Copilot_20260815_201341.png" alt="Clan Hat">
-            <h3>United Cap</h3>
-            <p>Black cap with stitched clan crest.</p>
-            <div class="price">$20</div>
-            <a class="btn" href="#">Buy Now</a>
-        </div>
+<div id="checkoutPage">
+    <h2>Checkout</h2>
+    <p>Your items have been saved. Add payment integration later.</p>
+</div>
 
-        <div class="item">
-            <img src="Copilot_20260815_201608.png" alt="Clan Poster">
-            <h3>Clan Poster</h3>
-            <p>High‑resolution wall poster of the Deadly Clan lion.</p>
-            <div class="price">$15</div>
-            <a class="btn" href="#">Buy Now</a>
-        </div>
+<div class="store-container">
 
+    <div class="item">
+        <img src="Copilot_20260815_201341.png" alt="Hoodie">
+        <h3>Royal Hoodie</h3>
+        <div class="price">$45</div>
+        <div class="btn" onclick="addToCart('Royal Hoodie', 45)">Add to Cart</div>
     </div>
+
+    <div class="item">
+        <img src="Copilot_20260815_201608.png" alt="Shirt">
+        <h3>Ruthless T‑Shirt</h3>
+        <div class="price">$25</div>
+        <div class="btn" onclick="addToCart('Ruthless T‑Shirt', 25)">Add to Cart</div>
+    </div>
+
+    <div class="item">
+        <img src="Copilot_20260815_201341.png" alt="Cap">
+        <h3>United Cap</h3>
+        <div class="price">$20</div>
+        <div class="btn" onclick="addToCart('United Cap', 20)">Add to Cart</div>
+    </div>
+
+    <div class="item">
+        <img src="Copilot_20260815_201608.png" alt="Poster">
+        <h3>Clan Poster</h3>
+        <div class="price">$15</div>
+        <div class="btn" onclick="addToCart('Clan Poster', 15)">Add to Cart</div>
+    </div>
+
+</div>
+
+<script>
+    let cart = JSON.parse(localStorage.getItem("deadlyClanCart")) || [];
+
+    function saveCart() {
+        localStorage.setItem("deadlyClanCart", JSON.stringify(cart));
+    }
+
+    function addToCart(name, price) {
+        let item = cart.find(i => i.name === name);
+        if (item) {
+            item.qty++;
+        } else {
+            cart.push({ name, price, qty: 1 });
+        }
+        updateCart();
+        saveCart();
+
+        let btn = document.getElementById("openCartBtn");
+        btn.classList.add("bump");
+        setTimeout(() => btn.classList.remove("bump"), 300);
+    }
+
+    function updateCart() {
+        let cartItemsDiv = document.getElementById("cart-items");
+        cartItemsDiv.innerHTML = "";
+
+        let total = 0;
+
+        cart.forEach((item, index) => {
+            total += item.price * item.qty;
+
+            cartItemsDiv.innerHTML += `
+                <div class="cart-item">
+                    <div class="cart-item-title">${item.name}</div>
+                    <div class="cart-controls">
+                        <button class="qty-btn" onclick="changeQty(${index}, -1)">-</button>
+                        <span>${item.qty}</span>
+                        <button class="qty-btn" onclick="changeQty(${index}, 1)">+</button>
+                        <button class="remove-btn" onclick="removeItem(${index})">Remove</button>
+                    </div>
+                </div>
+            `;
+        });
+
+        document.getElementById("cart-total").innerText = "Total: $" + total;
+    }
+
+    function changeQty(index, amount) {
+        cart[index].qty += amount;
+        if (cart[index].qty <= 0) cart.splice(index, 1);
+        updateCart();
+        saveCart();
+    }
+
+    function removeItem(index) {
+        cart.splice(index, 1);
+        updateCart();
+        saveCart();
+    }
+
+    document.getElementById("openCartBtn").onclick = () => {
+        document.getElementById("cart").classList.toggle("open");
+    };
+
+    document.getElementById("checkoutBtn").onclick = () => {
+        document.getElementById("checkoutPage").style.display = "block";
+        document.querySelector(".store-container").style.display = "none";
+        document.getElementById("cart").classList.remove("open");
+    };
+
+    updateCart();
+</script>
+
 </body>
 </html>
+
