@@ -5,21 +5,36 @@
     <title>Deadly Clan Merch</title>
     <style>
         body {
-            background: #0d0d0d;
+            background: #000;
             color: white;
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
         }
 
+        /* NEON RED GLOW */
+        .neon {
+            color: #ff1a1a;
+            text-shadow: 0 0 10px #ff1a1a, 0 0 20px #ff1a1a, 0 0 40px #b30000;
+        }
+
         header {
-            background: #111;
+            background: #0a0a0a;
             padding: 20px;
             text-align: center;
-            font-size: 32px;
+            font-size: 36px;
             font-weight: bold;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
             border-bottom: 2px solid #b30000;
+        }
+
+        /* CLAN LOGO BANNER */
+        #banner {
+            width: 100%;
+            height: 250px;
+            background: url("Copilot_20260815_201341.png") center/cover no-repeat;
+            border-bottom: 3px solid #b30000;
+            box-shadow: 0 0 25px #b30000;
         }
 
         .store-container {
@@ -30,17 +45,18 @@
         }
 
         .item {
-            background: #1a1a1a;
+            background: #111;
             padding: 20px;
             border-radius: 10px;
             text-align: center;
             transition: 0.3s;
             border: 1px solid #333;
+            box-shadow: 0 0 15px #b30000;
         }
 
         .item:hover {
             transform: scale(1.05);
-            border-color: #b30000;
+            box-shadow: 0 0 25px #ff1a1a;
         }
 
         .item img {
@@ -48,6 +64,7 @@
             height: 250px;
             object-fit: cover;
             border-radius: 8px;
+            box-shadow: 0 0 15px #b30000;
         }
 
         .item h3 {
@@ -59,7 +76,7 @@
         .price {
             font-size: 20px;
             margin: 10px 0;
-            color: #b30000;
+            color: #ff1a1a;
             font-weight: bold;
         }
 
@@ -73,10 +90,12 @@
             margin-top: 10px;
             transition: 0.3s;
             cursor: pointer;
+            box-shadow: 0 0 10px #b30000;
         }
 
         .btn:hover {
-            background: #e60000;
+            background: #ff1a1a;
+            box-shadow: 0 0 20px #ff1a1a;
         }
 
         /* CART PANEL */
@@ -86,11 +105,12 @@
             top: 0;
             width: 350px;
             height: 100%;
-            background: #111;
+            background: #0a0a0a;
             border-left: 2px solid #b30000;
             padding: 20px;
             transition: 0.4s;
             overflow-y: auto;
+            box-shadow: -5px 0 20px #b30000;
         }
 
         #cart.open {
@@ -100,14 +120,16 @@
         #cart h2 {
             text-align: center;
             margin-bottom: 20px;
+            color: #ff1a1a;
         }
 
         .cart-item {
-            background: #1a1a1a;
+            background: #111;
             padding: 10px;
             margin-bottom: 15px;
             border-radius: 8px;
             border: 1px solid #333;
+            box-shadow: 0 0 10px #b30000;
         }
 
         .cart-item-title {
@@ -128,6 +150,7 @@
             cursor: pointer;
             color: white;
             border-radius: 5px;
+            box-shadow: 0 0 10px #b30000;
         }
 
         .remove-btn {
@@ -141,7 +164,7 @@
             font-size: 22px;
             text-align: center;
             margin-top: 20px;
-            color: #b30000;
+            color: #ff1a1a;
         }
 
         #checkoutBtn {
@@ -152,6 +175,7 @@
             border-radius: 5px;
             margin-top: 20px;
             cursor: pointer;
+            box-shadow: 0 0 15px #b30000;
         }
 
         /* CART ICON ANIMATION */
@@ -165,10 +189,12 @@
             cursor: pointer;
             font-size: 18px;
             transition: 0.3s;
+            box-shadow: 0 0 20px #b30000;
         }
 
         #openCartBtn.bump {
             transform: scale(1.2);
+            box-shadow: 0 0 30px #ff1a1a;
         }
 
         /* CHECKOUT PAGE */
@@ -181,59 +207,82 @@
         #checkoutPage h2 {
             font-size: 32px;
             margin-bottom: 20px;
+            color: #ff1a1a;
         }
 
         #checkoutPage p {
             font-size: 20px;
             opacity: 0.8;
         }
+
+        /* MOBILE RESPONSIVE */
+        @media (max-width: 600px) {
+            #cart {
+                width: 100%;
+            }
+
+            .store-container {
+                grid-template-columns: 1fr;
+                padding: 20px;
+            }
+
+            .item img {
+                height: 200px;
+            }
+
+            header {
+                font-size: 28px;
+            }
+        }
     </style>
 </head>
 
 <body>
 
-<header>DEADLY CLAN MERCH</header>
+<header class="neon">DEADLY CLAN MERCH</header>
+
+<div id="banner"></div>
 
 <div id="openCartBtn">🛒 Cart</div>
 
 <div id="cart">
-    <h2>Your Cart</h2>
+    <h2 class="neon">Your Cart</h2>
     <div id="cart-items"></div>
     <div id="cart-total">Total: $0</div>
     <div id="checkoutBtn">Proceed to Checkout</div>
 </div>
 
 <div id="checkoutPage">
-    <h2>Checkout</h2>
-    <p>Your items have been saved. Add payment integration later.</p>
+    <h2 class="neon">Checkout</h2>
+    <p>Payment integration coming soon. Your cart is saved.</p>
 </div>
 
 <div class="store-container">
 
     <div class="item">
         <img src="Copilot_20260815_201341.png" alt="Hoodie">
-        <h3>Royal Hoodie</h3>
+        <h3 class="neon">Royal Hoodie</h3>
         <div class="price">$45</div>
         <div class="btn" onclick="addToCart('Royal Hoodie', 45)">Add to Cart</div>
     </div>
 
     <div class="item">
         <img src="Copilot_20260815_201608.png" alt="Shirt">
-        <h3>Ruthless T‑Shirt</h3>
+        <h3 class="neon">Ruthless T‑Shirt</h3>
         <div class="price">$25</div>
         <div class="btn" onclick="addToCart('Ruthless T‑Shirt', 25)">Add to Cart</div>
     </div>
 
     <div class="item">
         <img src="Copilot_20260815_201341.png" alt="Cap">
-        <h3>United Cap</h3>
+        <h3 class="neon">United Cap</h3>
         <div class="price">$20</div>
         <div class="btn" onclick="addToCart('United Cap', 20)">Add to Cart</div>
     </div>
 
     <div class="item">
         <img src="Copilot_20260815_201608.png" alt="Poster">
-        <h3>Clan Poster</h3>
+        <h3 class="neon">Clan Poster</h3>
         <div class="price">$15</div>
         <div class="btn" onclick="addToCart('Clan Poster', 15)">Add to Cart</div>
     </div>
