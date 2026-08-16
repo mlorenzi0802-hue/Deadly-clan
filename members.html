@@ -1,41 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Deadly Clan – Members</title>
-  <style>
-    body { margin: 0; background: #000; color: #fff; font-family: Arial, sans-serif; }
-    header { text-align: center; padding: 30px 20px; border-bottom: 2px solid gold; }
-    header h1 { color: gold; margin: 0; }
-    nav a { color: #fff; text-decoration: none; margin: 0 10px; font-weight: 600; }
-    nav a:hover { color: gold; }
-    .section { max-width: 800px; margin: 0 auto; padding: 40px 20px; text-align: center; }
-    .member-list { list-style: none; padding: 0; }
-    .member-list li { margin: 10px 0; }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>Deadly Clan – Members</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="members.html">Members</a>
-      <a href="rules.html">Rules</a>
-      <a href="merch.html">Merch</a>
-    </nav>
-  </header>
+    <meta charset="UTF-8">
+    <title>Deadly Clan Members</title>
+    <style>
+        body {
+            background: #000;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
 
-  <section class="section">
-    <h2>Core Members</h2>
-    <p>These are the warriors who carry the lion’s mark.</p>
-    <ul class="member-list">
-      <li>Leader: Deadly King</li>
-      <li>Co‑Leader: Shadow Lion</li>
-      <li>Elite: Flame Fang</li>
-      <li>Elite: Golden Claw</li>
-      <!-- You can add real names or gamer tags here -->
-    </ul>
-  </section>
+        /* NEON RED GLOW */
+        .neon {
+            color: #ff1a1a;
+            text-shadow: 0 0 10px #ff1a1a, 0 0 20px #ff1a1a, 0 0 40px #b30000;
+        }
+
+        /* NAVBAR */
+        nav {
+            background: #0a0a0a;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            border-bottom: 2px solid #b30000;
+            box-shadow: 0 0 20px #b30000;
+        }
+
+        nav a {
+            color: #ff1a1a;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #fff;
+            text-shadow: 0 0 15px #ff1a1a;
+        }
+
+        /* CLAN BANNER */
+        #banner {
+            width: 100%;
+            height: 250px;
+            background: url("Copilot_20260815_201341.png") center/cover no-repeat;
+            border-bottom: 3px solid #b30000;
+            box-shadow: 0 0 25px #b30000;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        header h1 {
+            font-size: 42px;
+            letter-spacing: 3px;
+        }
+
+        /* MEMBER GRID */
+        .members-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            padding: 40px;
+        }
+
+        .member-card {
+            background: #111;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid #333;
+            box-shadow: 0 0 15px #b30000;
+            transition: 0.3s;
+        }
+
+        .member-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px #ff1a1a;
+        }
+
+        .member-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 0 15px #b30000;
+        }
+
+        .member-card h3 {
+            margin-top: 15px;
+            font-size: 24px;
+        }
+
+        .member-card p {
+            opacity: 0.8;
+            font-size: 18px;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #0a0a0a;
+            border-top: 2px solid #b30000;
+            box-shadow: 0 0 20px #b30000;
+            margin-top: 40px;
+        }
+
+        footer p {
+            opacity: 0.7;
+        }
+
+        /* MOBILE */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 32px;
+            }
+
+            #banner {
+                height: 180px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="members.html">Members</a>
+    <a href="merch.html">Merch</a>
+    <a href="rules.html">Rules</a>
+</nav>
+
+<div id="banner"></div>
+
+<header>
+    <h1 class="neon">DEADLY CLAN MEMBERS</h1>
+    <p>Royal. Ruthless. United.</p>
+</header>
+
+<div class="members-container">
+
+    <div class="member-card">
+        <img src="Copilot_20260815_201341.png" alt="Leader">
+        <h3 class="neon">MLorenzi</h3>
+        <p>Clan Leader</p>
+        <p>Rank: ★★★★★</p>
+    </div>
+
+    <div class="member-card">
+        <img src="Copilot_20260815_201608.png" alt="Co-Leader">
+        <h3 class="neon">ShadowFang</h3>
+        <p>Co‑Leader</p>
+        <p>Rank: ★★★★☆</p>
+    </div>
+
+    <div class="member-card">
+        <img src="Copilot_20260815_201341.png" alt="Elite">
+        <h3 class="neon">BlazeWolf</h3>
+        <p>Elite Member</p>
+        <p>Rank: ★★★☆☆</p>
+    </div>
+
+    <div class="member-card">
+        <img src="Copilot_20260815_201608.png" alt="Recruit">
+        <h3 class="neon">NightRider</h3>
+        <p>Recruit</p>
+        <p>Rank: ★★☆☆☆</p>
+    </div>
+
+</div>
+
+<footer>
+    <p>© 2026 Deadly Clan — All Rights Reserved</p>
+</footer>
+
 </body>
 </html>
+
